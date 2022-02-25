@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <%- include("layout/header.ejs") %>
+
+    <section>
+        <div class="row">
+            <div class="col-8 m-auto">
+                <h3 class="text-center mt-5">Form</h3>
+                <form action="/" method="post">
+                    <div class="container mt-3">
+                        <input class="form-control form-control-lg" type="text" placeholder="name"
+                            aria-label=".form-control-lg example" name="inputData">
+                        <button class="btn btn-danger mt-2" type="submit">Submit</button>
+                    </div>
+                </form>
+
+                <div class="div">
+                    <ul>
+
+                        <% if(dataShows){ %>
+                            <% for(let x = 0; x < dataShows.length; x++){ %>
+                            <li class="para"> <%=dataShows%> </li>
+                            <% } %>
+                            <% }else{ %>
+                            <p>no data found</p>
+                            <% } %>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- footer -->
+    <%- include("layout/Footer.ejs") %>
+
+    <script src="bootstrap.min.js"></script>
+</body>
+
+</html>
